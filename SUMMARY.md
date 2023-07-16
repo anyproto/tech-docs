@@ -1,5 +1,7 @@
 # Table of contents
 
+* [Open repos](README.md)
+
 ## 🌐 any-sync
 
-* [Configuration](README.md)
+* [Configuration](<README (1).md>)
