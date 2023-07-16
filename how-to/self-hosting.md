@@ -34,7 +34,8 @@ You will need a MongoDB to run Any-Sync Coordinator Node, and an S3 bucket and R
 
 ```bash
 git clone https://github.com/anyproto/any-sync-tools.git
-go install any-sync-tools/any-sync-network
+cd any-sync-tools
+go install ./any-sync-network
 any-sync-network create
 ```
 
