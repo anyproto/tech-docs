@@ -12,7 +12,7 @@ This article will help you to self-host Any-Sync on your own infrastructure for 
 
 ## Prerequisites
 
-To ensure compatibility, please use Go version `1.19` for building `any-sync-*` and `anytype-heart`.&#x20;
+To ensure compatibility, please use Go version `1.19` for building `any-sync-*` and `anytype-heart`.
 
 You will need a MongoDB to run Any-Sync Coordinator Node, and an S3 bucket and Redis to run Any-Sync File Node.
 
@@ -28,19 +28,20 @@ You will need a MongoDB to run Any-Sync Coordinator Node, and an S3 bucket and R
      * Profile
      * Bucket name
      * Credentials (see )
-3. Create configurations for future `any-sync-*` nodes and `anytype-heart`. \
-   You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool, or you can more complex configurations on your own (please see [README (1).md](<../README (1).md> "mention") for details).\
-   
-   If you decide to use `any-sync-network` tool, please run following commands and use interactive CLI to generate configuration files:
-   ```bash
-   git clone https://github.com/anyproto/any-sync-tools.git
-   cd any-sync-tools
-   go install ./any-sync-network
-   any-sync-network create
-   ```
+3.  Create configurations for future `any-sync-*` nodes and `anytype-heart`.\
+    You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool, or you can more complex configurations on your own (please see [configuration.md](../any-sync/configuration.md "mention") for details).
+
+    If you decide to use `any-sync-network` tool, please run following commands and use interactive CLI to generate configuration files:
+
+    ```bash
+    git clone https://github.com/anyproto/any-sync-tools.git
+    cd any-sync-tools
+    go install ./any-sync-network
+    any-sync-network create
+    ```
 4. Download and build [`any-sync-coordinator`](https://github.com/anyproto/any-sync-coordinator), [`any-sync-node`](https://github.com/anyproto/any-sync-node), and [`any-sync-filenode`](https://github.com/anyproto/any-sync-filenode) see `README.md` inside each repo for details.
-5. Run nodes using proper configuration files. If you generated them with `any-sync-network` tool, use:&#x20;
-   * `coordinator.yml` for `any-sync-coordinator` node,&#x20;
+5. Run nodes using proper configuration files. If you generated them with `any-sync-network` tool, use:
+   * `coordinator.yml` for `any-sync-coordinator` node,
    * `sync-N.yml` for each of `any-sync-node`s,
    * `file-N.yml` for each of `any-sync-filenode`s.
 6. `TBD` Download and build [`anytype-heart`](https://github.com/anyproto/anytype-heart) middleware library. See `README.md` inside the repo for details.
@@ -50,6 +51,6 @@ You will need a MongoDB to run Any-Sync Coordinator Node, and an S3 bucket and R
 
 ## Conditions
 
-Middleware library `anytype-heart` and Anytype clients `anytype-ts`, `anytype-swift` and `anytype-kotlin` are licensed under [Any Source Available License 1.0](https://networks.any.coop).&#x20;
+Middleware library `anytype-heart` and Anytype clients `anytype-ts`, `anytype-swift` and `anytype-kotlin` are licensed under [Any Source Available License 1.0](https://networks.any.coop).
 
 It allows Non-Commercial use, but if you plan a Commercial use for your self-hosted instance, you will need to obtain a separate use grant from us. Please contact [license@any.coop](mailto:license@any.coop) in this case first.
