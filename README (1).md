@@ -14,7 +14,9 @@ These options are common for all types of Any-Sync nodes.
 <strong>account: 
 </strong>  peerId: # required; public key
   peerKey: # required; private key
-  signingKey: # required; private key, coordinator node uses private key of the network
+  signingKey: # required; private key, 
+              # coordinator node uses private key of the network
+              # sync and file nodes use their peerKey
 
 # required; dRPC parameters
 drpc:
@@ -34,7 +36,8 @@ network:
   nodes: # required; an array of nodes
     - peerId: # required; node's account peer ID
       addresses: # required; an array of node's addresses
-      types: # required; an array of node's types; allowed values: tree (for sync nodes), file, coordinator
+      types: # required; an array of node's types,
+             # allowed values: tree (for sync nodes), file, coordinator
   creationTime: # required; configuration's creation time
 
 # required; a path where current configuration is stored
