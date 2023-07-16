@@ -57,10 +57,10 @@ These options are specific for Any-Sync Coordinator nodes.
   connect: # required; MongoDB connection URL
   database: # required; MongoDB database name
 
-# required; Space configuration for network ...
+# required; Space status update configuration
 spaceStatus:
-  runSeconds: # required; ...
-  deletionPeriodDays: # required; ...
+  runSeconds: # required; Space status update frequency
+  deletionPeriodDays: # required; Space data deletion frequency
 </code></pre>
 
 ## Sync Node configuration options
@@ -72,27 +72,27 @@ These options are specific for Any-Sync Sync nodes.
 # Descibes how often the node requests network configuration from the coordinator node
 networkUpdateIntervalSec: 
 
-# required; Space settings ...
+# required; Space cache settings
 space:
-  gcTTL: # required; ...
-  syncPeriod: # required; ...
+  gcTTL: # required; Space cache time-to-live in memory
+  syncPeriod: # required
 
 # required; Space data storage configuration
 storage:
   path: # required; Local path for space data storage
 
-# required; Node Sync configuration ...
+# required; Direct inter-node (without coordinator) sync configuration
 nodeSync:
-  hotSync: # required; ... flag (boolean)
-    simultaneousRequests: # required; ...
-  syncOnStart: # required; ...
-  periodicSyncHours: # required; ...
+  hotSync: # required
+    simultaneousRequests: # required
+  syncOnStart: # required; flag (boolean)
+  periodicSyncHours: # required
 
 # required; Log configuration
 log:
-  production: # required; production flag (boolean)
-  defaultLevel: # required; default level ...
-  namedLevels: # required; ...
+  production: # required; flag (boolean)
+  defaultLevel: # required
+  namedLevels: # required
 
 # optional; Debug API listener configuration, must not be public
 apiServer:
