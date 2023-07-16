@@ -8,4 +8,4 @@
 
 ## 🌐 any-sync
 
-* [Configuration](<README (1).md>)
+* [Configuration](any-sync/configuration.md)
