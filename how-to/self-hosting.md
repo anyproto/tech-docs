@@ -53,15 +53,17 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
 
     ```bash
     # Build and install for desktop client
-    make install-dev-js ANYTYPE_NETWORK=heart.yml
+    make install-dev-js ANY_SYNC_NETWORK=heart.yml
     ```
+
     ```bash
     # Build for iOS client
-    make build-ios ANYTYPE_NETWORK=heart.yml
+    make build-ios ANY_SYNC_NETWORK=heart.yml
     ```
+
     ```bash
     # Build for Android client
-    make build-android ANYTYPE_NETWORK=heart.yml
+    make build-android ANY_SYNC_NETWORK=heart.yml
     ```
     See `anytype-heart` [`README.md`](https://github.com/anyproto/anytype-heart#build-from-source) for details.
 8. The last step! Build clients you need from the source. Refer to `README.md` in clients repositories for more details:
