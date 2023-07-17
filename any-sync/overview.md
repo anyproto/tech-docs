@@ -1,6 +1,6 @@
 # Protocol overview
 
-Any-Sync is an open-source protocol designed to create high-performance, local-first, peer-to-peer, end-to-end encrypted applications that facilitate seamless collaboration among multiple users and devices.&#x20;
+Any-Sync is an open-source protocol designed to create high-performance, local-first, peer-to-peer, end-to-end encrypted applications that facilitate seamless collaboration among multiple users and devices.
 
 By utilizing this protocol, users can rest assured that they retain complete control over their data and digital experience. They are empowered to freely transition between various service providers, or even opt to self-host the applications.
 
@@ -27,13 +27,13 @@ Features:
 
 #### Data representation
 
-<figure><img src="../.gitbook/assets/crdt_draft.gif" alt=""><figcaption></figcaption></figure>
+![CRDT](../.gitbook/assets/crdt.gif)
 
 _**Objects**_
 
 `any-sync` is designed to synchronize digital objects that are structured as [Conflict-free Replicated Data](https://en.wikipedia.org/wiki/Conflict-free\_replicated\_data\_type) [Directed Acyclic Graphs](https://en.wikipedia.org/wiki/Directed\_acyclic\_graph) (DAGs). In this representation, each object is considered as a root, representing its initial state, and captures all the subsequent changes made to the object over time. Put simply, in `any-sync`, the objects serve as a comprehensive record of the complete history of the associated changes.
 
-The changes, which don’t have changes after them, are object heads.&#x20;
+The changes, which don’t have changes after them, are object heads.
 
 _**Conflict resolution**_
 
@@ -59,7 +59,7 @@ It uses [IPLD](https://ipld.io/) data structures to store files' data. Files are
 
 _**Spaces**_
 
-<figure><img src="https://lh6.googleusercontent.com/VADabVAtGsEM8d2tqaL8nuRmkzrCrXPDv0AKOcxIdrV_ITXUENsblSZonR3OpT7Ol9r79LtWdOUIqbl308mXs_j3TWKEDiwEYK2kwLrFfL2QiTEpNsQi93PS1BVL4gL4edjDkeItnqz7co8FLxdvh-w" alt=""><figcaption></figcaption></figure>
+![Space](../.gitbook/assets/space.png)
 
 A Space is a collection of digital objects with an Access Control List (ACL), which allows the user to define who can read and modify its contents.
 
@@ -77,7 +77,7 @@ Every time a user modifies the data, the changes are both encrypted and signed u
 
 #### Infrastructure
 
-<figure><img src="https://lh5.googleusercontent.com/WljC4LfuSeED94COr3M6sXYCtpSilGoaAOk0SxL3D5twQ03bQCYcFmeBVR_dvMbhlEVDAkrlxt5Uf8nc8tPqURUjmR1bfPQjs67U4I6KJai_4DgaObMLcDxQt5Ydt0LLDFMKRkM__s6OsUgg8Kd4KQM" alt=""><figcaption></figcaption></figure>
+![Infrastructure](../.gitbook/assets/infrastructure.png)
 
 While `any-sync` works locally on user’s devices and in local p2p networks, an Infrastructure layer is needed to provide external data storage and backups, as well as seamless collaboration between agents in different networks.
 
@@ -87,12 +87,12 @@ _**Nodes**_\
 The infrastructure side consists of three types of nodes: sync nodes, file nodes, and a coordinator node.
 
 * _Sync nodes_ store and process spaces. Each space is served by several sync nodes in order to increase the reliability of infrastructure.
-* _File nodes_ store and process files based on IPLD data structure.&#x20;
+* _File nodes_ store and process files based on IPLD data structure.
 * _Coordinator node_ is responsible for storing and updating the infrastructure configuration: it manages the list of nodes, provides clients with addresses of nodes for spaces, provides nodes with addresses of replicas, etc.
 
 _**Load distribution**_
 
-<figure><img src="https://lh3.googleusercontent.com/XO70RfuypdWey9doKmk7VUda-q0Sp1LNS6tVvxUHEK4sw8Uv4r3PgB8f1bYezbLDNs8B067Wc8BkUJlCr0Jx_tJyigQ_Vc8dl63exYqTgCWhMpO3YGU7G_NbS3ehfpZG3EwmfTyvLtMYLUsk4V5Ga8w" alt=""><figcaption></figcaption></figure>
+![Load distribution](../.gitbook/assets/load_distribution.png)
 
 [Load distribution](https://github.com/anyproto/go-chash) is implemented with a combination of modular hashing and consistent hashing. The algorithm distributes partitions (groups of spaces) between nodes using consistent hashing, then uses modular hashing to determine the partition for space (and thus the node for space).
 
@@ -148,10 +148,10 @@ Creating stable identifiers and implementing logic to merge different document s
 
 We are excited to announce the early development stage release of `any-sync` to the community.
 
-In the upcoming phases of development, we have planned the following key features to be implemented:&#x20;
+In the upcoming phases of development, we have planned the following key features to be implemented:
 
-* Full Access Control List (ACL) support for multiple agents: This enhancement will enable intricate collaboration scenarios by providing comprehensive control over access permissions and privileges among different agents involved in the synchronization process.&#x20;
-* Multiple service providers: We intend to introduce support for multiple service providers, facilitating seamless communication between diverse remote infrastructures. This feature will enhance interoperability and enable users to connect and collaborate across various infrastructure providers.&#x20;
+* Full Access Control List (ACL) support for multiple agents: This enhancement will enable intricate collaboration scenarios by providing comprehensive control over access permissions and privileges among different agents involved in the synchronization process.
+* Multiple service providers: We intend to introduce support for multiple service providers, facilitating seamless communication between diverse remote infrastructures. This feature will enhance interoperability and enable users to connect and collaborate across various infrastructure providers.
 * Global peer-to-peer (p2p) communication: `any-sync` will be enhanced to enable direct communication and connection between devices without the need for a remote infrastructure. This advancement will empower users with the ability to establish direct p2p connections, fostering faster and more efficient data synchronization.
 
 We are committed to continually improving `any-sync` and are thrilled to bring these exciting features to fruition in the near future, further enhancing its capabilities for the benefit of the community.
