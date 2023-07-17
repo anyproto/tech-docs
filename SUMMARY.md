@@ -10,3 +10,7 @@
 
 * [Protocol overview](any-sync/overview.md)
 * [Configuration](any-sync/configuration.md)
+
+## ❤️ anytype-heart
+
+* [Configuration](anytype-heart/configuration.md)

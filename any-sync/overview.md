@@ -77,8 +77,6 @@ Every time a user modifies the data, the changes are both encrypted and signed u
 
 #### Infrastructure
 
-![Infrastructure](../.gitbook/assets/infrastructure.png)
-
 While `any-sync` works locally on user’s devices and in local p2p networks, an Infrastructure layer is needed to provide external data storage and backups, as well as seamless collaboration between agents in different networks.
 
 `any-sync` protocol works the same way on the user’s devices and on the infrastructure side. So every node could be seen as a peer.
@@ -91,8 +89,6 @@ The infrastructure side consists of three types of nodes: sync nodes, file nodes
 * _Coordinator node_ is responsible for storing and updating the infrastructure configuration: it manages the list of nodes, provides clients with addresses of nodes for spaces, provides nodes with addresses of replicas, etc.
 
 _**Load distribution**_
-
-![Load distribution](../.gitbook/assets/load_distribution.png)
 
 [Load distribution](https://github.com/anyproto/go-chash) is implemented with a combination of modular hashing and consistent hashing. The algorithm distributes partitions (groups of spaces) between nodes using consistent hashing, then uses modular hashing to determine the partition for space (and thus the node for space).
 

@@ -19,11 +19,6 @@ account:
                    # coordinator node uses private key of the network
                    # sync and file nodes use their peerKey
 
-# required; dRPC parameters
-drpc:
-  stream:
-    maxMsgSizeMb:  # required
-
 # required; tcp/yamux network configuration
 yamux:
   listenAddrs:     # required; an array of address which node should listen
@@ -43,6 +38,11 @@ network:
 
 # required; a path where current configuration is stored
 networkStorePath: 
+
+# optional; dRPC parameters
+drpc:
+  stream:
+    maxMsgSizeMb:  # required
 
 # optional; Prometheus monitoring listener configuration
 metric:
@@ -108,6 +108,7 @@ These options are specific for Any-Sync File nodes.
 ```yaml
 # required; S3 configuration
 s3Store:
+  endpoints:  # optional; endpoint for S3-compatible object storage
   region:     # required; S3 region name
   profile:    # required; S3 profile name
   bucket:     # required; S3 bucket name
