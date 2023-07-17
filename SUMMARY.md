@@ -8,4 +8,5 @@
 
 ## 🌐 any-sync
 
+* [Protocol overview](any-sync/overview.md)
 * [Configuration](any-sync/configuration.md)
