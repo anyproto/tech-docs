@@ -77,6 +77,8 @@ Every time a user modifies the data, the changes are both encrypted and signed u
 
 #### Infrastructure
 
+![Infrastructure](../.gitbook/assets/infrastructure.png)
+
 While `any-sync` works locally on user’s devices and in local p2p networks, an Infrastructure layer is needed to provide external data storage and backups, as well as seamless collaboration between agents in different networks.
 
 `any-sync` protocol works the same way on the user’s devices and on the infrastructure side. So every node could be seen as a peer.
@@ -97,6 +99,8 @@ The algorithm limits the load on a node, which makes distribution more or less e
 Adding a new node leads to the change of infrastructure configuration. This event starts the resharding process, when spaces and data within them are transferred between nodes according to the new configuration.
 
 #### Peer retrieval
+
+![Hybrid peer retrieval](../.gitbook/assets/peer_retrieval.png)
 
 _**Local p2p**_
 
