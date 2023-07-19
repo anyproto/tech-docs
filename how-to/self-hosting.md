@@ -34,7 +34,7 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
    * Redis:
      * Connection URL
 3.  Create configurations for future `any-sync-*` nodes and `anytype-heart`.\
-    You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool, or you can create a more complex configurations on your own (please see [Any-Sync Configuration](../any-sync/configuration.md "mention") for details).
+    You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool, or you can create more complex configurations on your own (please see [Any-Sync Configuration](../any-sync/configuration.md "mention") for details).
 
     If you decide to use `any-sync-network` tool, please run following commands and use interactive CLI to generate configuration files:
 
