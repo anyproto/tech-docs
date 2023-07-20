@@ -8,9 +8,9 @@ This ensures utmost flexibility and autonomy for users in managing their persona
 
 ### Introduction
 
-Most existing information management tools are implemented on centralized client-server architecture or designed for an offline-first single-user usage. Either way there are trade-offs for users: they can face restricted freedoms and privacy violations or compromise on the functionality of tools to avoid this.
+Most existing information management tools are implemented on centralized client-server architecture or designed for an offline-first single-user usage. Either way, there are trade-offs for users: they can face restricted freedoms and privacy violations or compromise on the functionality of tools to avoid this.
 
-We believe this goes against fundamental digital freedoms and that a new generation of software is needed that will respect these freedoms, while providing best in-class user experience.
+We believe this goes against fundamental digital freedoms and that a new generation of software is needed that will respect these freedoms, while providing a best-in-class user experience.
 
 Our goal with `any-sync` is to develop a protocol that will enable the deployment of this software.
 
@@ -39,7 +39,7 @@ _**Conflict resolution**_
 
 `any-sync` is specifically designed to support collaboration among multiple devices and agents, which can result in situations where objects have multiple "heads." In this context, a head refers to the local state of the object as observed by each device or agent involved.
 
-When a user makes changes to an object that has multiple heads, the new change will incorporate and reference all of these heads. This process effectively "merges" several branches together, resulting in a unified and singular state for the object
+When a user makes changes to an object that has multiple heads, the new change will incorporate and reference all of these heads. This process effectively "merges" several branches together, resulting in a unified and singular state for the object.
 
 During the process of retrieving the current state of an object, the protocol begins with a specific head and follows Content IDs (CIDs) to construct the sequence of changes. If there are multiple heads or several possible ways to identify the previous change, a topological sort is employed. This sort relies on the hash values associated with the changes to determine the order in which the changes occurred, ultimately establishing the correct sequence of changes.
 
@@ -73,7 +73,7 @@ Each user has private and public keys which are used for signing, encrypting, an
 
 `any-sync` uses the [Ed25519](https://en.wikipedia.org/wiki/EdDSA) algorithm for signing to provide strong cryptographic security, while still keeping the performance overhead low.
 
-Every time a user modifies the data, the changes are both encrypted and signed using their own private key. When these changes are synchronized with other devices or sync-nodes, they are verified using a shared public key. However, only the user, who possesses the private key, can access the content of these changes.
+Every time a user modifies the data, the changes are both encrypted and signed using their own private key. When these changes are synchronized with other devices or sync-nodes, they are verified using a shared public key. However, only the user who possesses the private key can access the content of these changes.
 
 #### Infrastructure
 
@@ -96,7 +96,7 @@ _**Load distribution**_
 
 The algorithm limits the load on a node, which makes distribution more or less even.
 
-Adding a new node leads to the change of infrastructure configuration. This event starts the resharding process, when spaces and data within them are transferred between nodes according to the new configuration.
+Adding a new node leads to a change in infrastructure configuration. This event starts the resharding process, when spaces and data within them are transferred between nodes according to the new configuration.
 
 #### Peer retrieval
 
@@ -124,7 +124,7 @@ Once a client receives the address of the node for a space, it subscribes for up
 
 Files stored on the external infrastructure are retrieved from file nodes.
 
-Moreover, a hybrid mode is possible if a user has two devices with any-sync in the same local network. Let’s say, the first device has access to external infrastructure, while the second device does not.
+Moreover, a hybrid mode is possible if a user has two devices with any-sync in the same local network. Let’s say the first device has access to external infrastructure, while the second device does not.
 
 In this case, the first device acts as a bridge. It exchanges data with the local peer and translates changes made on the second device to the external storage.
 
@@ -148,7 +148,7 @@ Creating stable identifiers and implementing logic to merge different document s
 
 We are excited to announce the early development stage release of `any-sync` to the community.
 
-In the upcoming phases of development, we have planned the following key features to be implemented:
+In the upcoming phases of development, we have planned to implement the following key features:
 
 * Full Access Control List (ACL) support for multiple agents: This enhancement will enable intricate collaboration scenarios by providing comprehensive control over access permissions and privileges among different agents involved in the synchronization process.
 * Multiple service providers: We intend to introduce support for multiple service providers, facilitating seamless communication between diverse remote infrastructures. This feature will enhance interoperability and enable users to connect and collaborate across various infrastructure providers.
