@@ -31,7 +31,7 @@ Features:
 
 _**Objects**_
 
-`any-sync` is designed to synchronize digital objects that are structured as [Conflict-free Replicated Data](https://en.wikipedia.org/wiki/Conflict-free\_replicated\_data\_type) [Directed Acyclic Graphs](https://en.wikipedia.org/wiki/Directed\_acyclic\_graph) (DAGs). In this representation, each object is considered a root, representing its initial state and capturing all the subsequent changes made to the object over time. Put simply, in `any-sync`, the objects serve as a comprehensive record of the complete history of the associated changes.
+`any-sync` is designed to synchronize digital objects that are structured as [Conflict-free Replicated Data](https://en.wikipedia.org/wiki/Conflict-free\_replicated\_data\_type) [Directed Acyclic Graphs](https://en.wikipedia.org/wiki/Directed\_acyclic\_graph) (DAGs). In this representation, each object is considered as a root, representing its initial state, and captures all the subsequent changes made to the object over time. Put simply, in `any-sync`, the objects serve as a comprehensive record of the complete history of the associated changes.
 
 The changes, which don’t have changes after them, are object heads.
 
