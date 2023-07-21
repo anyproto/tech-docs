@@ -47,8 +47,8 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
 4. Download and build [`any-sync-coordinator`](https://github.com/anyproto/any-sync-coordinator), [`any-sync-node`](https://github.com/anyproto/any-sync-node), and [`any-sync-filenode`](https://github.com/anyproto/any-sync-filenode) see `README.md` inside each repo for details.
 5. Run nodes using proper configuration files. If you generated them with `any-sync-network` tool, use:
    * `coordinator.yml` for `any-sync-coordinator` node,
-   * `sync-N.yml` for each of `any-sync-node`s,
-   * `file-N.yml` for each of `any-sync-filenode`s.
+   * `sync_N.yml` for each of `any-sync-node`s,
+   * `file_N.yml` for each of `any-sync-filenode`s.
 6. Download [`anytype-heart`](https://github.com/anyproto/anytype-heart) middleware library. Build it for the clients you need, using your network configuration. If you generated it with `any-sync-network` tool, use `heart.yml`:
 
     ```bash
