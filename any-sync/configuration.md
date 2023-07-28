@@ -1,7 +1,3 @@
----
-description: Full description for Any-Sync nodes configuration
----
-
 # Configuration
 
 You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool.

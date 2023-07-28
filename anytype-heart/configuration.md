@@ -1,7 +1,3 @@
----
-description: Description for Anytype-Heart network configuration
----
-
 # Configuration
 
 You can generate basic configuration for your nodes and network with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool.

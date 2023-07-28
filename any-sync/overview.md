@@ -27,7 +27,7 @@ Features:
 
 #### Data representation
 
-![CRDT](../.gitbook/assets/crdt.gif)
+![CRDT](../assets/crdt.gif)
 
 _**Objects**_
 
@@ -59,7 +59,7 @@ It uses [IPLD](https://ipld.io/) data structures to store files' data. Files are
 
 _**Spaces**_
 
-![Space](../.gitbook/assets/space.png)
+![Space](../assets/space.png)
 
 A Space is a collection of digital objects with an Access Control List (ACL), which allows the user to define who can read and modify its contents.
 
@@ -77,7 +77,7 @@ Every time a user modifies the data, the changes are both encrypted and signed u
 
 #### Infrastructure
 
-![Infrastructure](../.gitbook/assets/infrastructure.png)
+![Infrastructure](../assets/infrastructure.png)
 
 While `any-sync` works locally on user’s devices and in local p2p networks, an Infrastructure layer is needed to provide external data storage and backups, as well as seamless collaboration between agents in different networks.
 
@@ -100,7 +100,7 @@ Adding a new node leads to a change in infrastructure configuration. This event 
 
 #### Peer retrieval
 
-![Hybrid peer retrieval](../.gitbook/assets/peer_retrieval.png)
+![Hybrid peer retrieval](../assets/peer_retrieval.png)
 
 _**Local p2p**_
 

@@ -1,7 +1,3 @@
----
-description: A basic instruction about how to set up self-hosting
----
-
 # Self-hosting
 
 We believe that any software should support fundamental digital freedoms. With the rise of cryptography and computer systems, it is now possible to guarantee these freedoms in the world of bits: privacy of thoughts, freedom of speech, right to authorship, and autonomy from software providers. These rights can be encoded into the code, which when open, can be freely verified by anyone. This way, trust among users and developers can be established.
