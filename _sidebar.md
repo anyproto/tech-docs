@@ -1,11 +1,11 @@
-- [Open repos](README.md)
+- [Open repos](/)
 
-- ✅ HOW-TO
+- ✅ How-To
   - [Self-hosting](how-to/self-hosting.md)
 
-- 🌐 any-sync
+- 🌐 Any-Sync
   - [Protocol overview](any-sync/overview.md)
   - [Configuration](any-sync/configuration.md)
 
-- ❤️ anytype-heart
+- ❤️ Anytype-Heart
   - [Configuration](anytype-heart/configuration.md)
