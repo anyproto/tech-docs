@@ -12,4 +12,5 @@
 
 - 🌍 Localization
   - [Project overview](l10n/overview.md)
+  - [Glossary](l10n/glossary.md)
   - [Translation policy](l10n/policy.md)
