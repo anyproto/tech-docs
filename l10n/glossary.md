@@ -32,6 +32,6 @@ Set — a filtered view of Objects that have the same Object Type.
 
 Collection — a manually created group of Objects (can have different Object Types). The closest equivalent is a folder.
 
-Network — a collection of Nodes.
+Network — a group of Nodes working together.
 
 Node — a remote server that stores and processes data. It can be a coordinator, sync, or file node. See [`any-sync` overview](any-sync/overview.md) for more details.
