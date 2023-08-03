@@ -28,7 +28,9 @@ Template — defines how the content of the Object should be presented for a spe
 
 Layout — there are three Layouts that define the general look and feel of the Object and determine what actions can be taken for the Object. It could be referred to as Template Type.
 
-Set — a filtered view of Objects that have the same Object type.
+Set — a filtered view of Objects that have the same Object Type.
+
+Collection — a manually created group of Objects (can have different Object Types). The closest equivalent is a folder.
 
 Network — a collection of Nodes.
 
