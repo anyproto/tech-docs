@@ -104,7 +104,7 @@ These options are specific for Any-Sync File nodes.
 ```yaml
 # required; S3 configuration
 s3Store:
-  endpoints:  # optional; endpoint for S3-compatible object storage
+  endpoint:  # optional; endpoint for S3-compatible object storage
   region:     # required; S3 region name
   profile:    # required; S3 profile name
   bucket:     # required; S3 bucket name
