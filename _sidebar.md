@@ -7,7 +7,7 @@
   - [Protocol overview](any-sync/overview.md)
   - [Configuration](any-sync/configuration.md)
 
-- ❤️ Anytype-Heart
+- 🫀 Anytype-Heart
   - [Configuration](anytype-heart/configuration.md)
 
 - 🌍 Localization
