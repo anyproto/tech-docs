@@ -30,20 +30,23 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
    * Redis:
      * Connection URL
 3.  Create configurations for future `any-sync-*` nodes and `anytype-heart`.\
-    You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool, or you can create more complex configurations on your own (please see [Any-Sync Configuration](../any-sync/configuration.md "mention") for details).
+    You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools/tree/main/any-sync-network) tool, or you can create more complex configurations on your own (please see [Any-Sync Configuration](../any-sync/configuration.md "mention") for details).
 
     If you decide to use `any-sync-network` tool, please run following commands and use interactive CLI to generate configuration files:
 
     ```bash
-    git clone https://github.com/anyproto/any-sync-tools.git
-    cd any-sync-tools
-    go install ./any-sync-network
+    go install github.com/anyproto/any-sync-tools/any-sync-network@latest
     any-sync-network create
     ```
+
 4. Download and build [`any-sync-coordinator`](https://github.com/anyproto/any-sync-coordinator), [`any-sync-node`](https://github.com/anyproto/any-sync-node), and [`any-sync-filenode`](https://github.com/anyproto/any-sync-filenode) see `README.md` inside each repo for details.
-5. Run nodes using proper configuration files. If you generated them with `any-sync-network` tool, use:
+5. Run nodes using proper configuration files. 
+
+    If you generated them with `any-sync-network` tool, use:
    * `coordinator.yml` for `any-sync-coordinator` node,
-   * `sync_N.yml` for each of `any-sync-node`s,
+   * `sync_N.yml` for each of `any-sync-node`s, 
+   
+      (🚨 create a `db` folder in the current working directory of `any-sync-node`, as it is required by the generated configuration)
    * `file_N.yml` for each of `any-sync-filenode`s.
 6. Download [`anytype-heart`](https://github.com/anyproto/anytype-heart) middleware library. Build it for the clients you need, using your network configuration. If you generated it with `any-sync-network` tool, use `heart.yml`:
 

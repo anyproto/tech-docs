@@ -1,6 +1,6 @@
 # Configuration
 
-You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools) tool.
+You can generate basic configuration for your nodes with [`any-sync-network`](https://github.com/anyproto/any-sync-tools/tree/main/any-sync-network) tool.
 
 ## Common nodes configuration options
 
