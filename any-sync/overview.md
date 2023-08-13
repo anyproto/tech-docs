@@ -67,6 +67,8 @@ In the simplest scenario, each space holds the data of a single user, and this s
 
 Spaces are stored locally on user’s devices or on sync nodes on the external network.
 
+In case of ACL changes, a sync node requests a validation from a consensus node. If the ACL change is valid ([Raft algorithm](https://en.wikipedia.org/wiki/Raft_(algorithm)) is used for verification), the sync node updates the space ACL and sends the change to other sync nodes; otherwise, the sync node rejects the change. Hence, updating ACL requires a connection to the external network. If there is no connection, the change will be rejected.
+
 #### Encryption
 
 Each user has private and public keys which are used for signing, encrypting, and decrypting.
@@ -85,11 +87,12 @@ While `any-sync` works locally on user’s devices and in local p2p networks, an
 
 #### Nodes
 
-The infrastructure side consists of three types of nodes: sync nodes, file nodes, and a coordinator node.
+The infrastructure side consists of four types of nodes: sync, file, consensus and coordinator nodes.
 
 * _Sync nodes_ store and process spaces. Each space is served by several sync nodes in order to increase the reliability of infrastructure.
 * _File nodes_ store and process files based on IPLD data structure.
-* _Coordinator node_ is responsible for storing and updating the infrastructure configuration: it manages the list of nodes, provides clients with addresses of nodes for spaces, provides nodes with addresses of replicas, etc.
+* _Consesnsus nodes_ monitor ACL changes and verify their consistency and validity.
+* _Coordinator nodes_ is store and update the infrastructure configuration: they manage the list of nodes, provide clients with addresses of nodes for spaces, provide nodes with addresses of replicas, etc.
 
 #### Load distribution
 
