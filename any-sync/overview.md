@@ -6,7 +6,7 @@ By utilizing this protocol, users can rest assured that they retain complete con
 
 This ensures utmost flexibility and autonomy for users in managing their personal information and digital interactions.
 
-### Introduction
+## Introduction
 
 Most existing information management tools are implemented on centralized client-server architecture or designed for an offline-first single-user usage. Either way, there are trade-offs for users: they can face restricted freedoms and privacy violations or compromise on the functionality of tools to avoid this.
 
@@ -23,19 +23,19 @@ Features:
 * Reliable and scalable infrastructure
 * Simultaneous support of p2p and remote communication
 
-### Protocol explanation
+## Protocol explanation
 
-#### Data representation
+### Data representation
 
 ![CRDT](../assets/crdt.gif)
 
-_**Objects**_
+#### Objects
 
 `any-sync` is designed to synchronize digital objects that are structured as [Conflict-free Replicated Data](https://en.wikipedia.org/wiki/Conflict-free\_replicated\_data\_type) [Directed Acyclic Graphs](https://en.wikipedia.org/wiki/Directed\_acyclic\_graph) (DAGs). In this representation, each object is considered as a root, representing its initial state, and captures all the subsequent changes made to the object over time. Put simply, in `any-sync`, the objects serve as a comprehensive record of the complete history of the associated changes.
 
 The changes, which don’t have changes after them, are object heads.
 
-_**Conflict resolution**_
+#### Conflict resolution
 
 `any-sync` is specifically designed to support collaboration among multiple devices and agents, which can result in situations where objects have multiple "heads." In this context, a head refers to the local state of the object as observed by each device or agent involved.
 
@@ -43,13 +43,13 @@ When a user makes changes to an object that has multiple heads, the new change w
 
 During the process of retrieving the current state of an object, the protocol begins with a specific head and follows Content IDs (CIDs) to construct the sequence of changes. If there are multiple heads or several possible ways to identify the previous change, a topological sort is employed. This sort relies on the hash values associated with the changes to determine the order in which the changes occurred, ultimately establishing the correct sequence of changes.
 
-_**Snapshots**_
+#### Snapshots
 
 To enhance the efficiency of retrieving the current state, the protocol employed by `any-sync` uses a probability-based mechanism that can transform a change into a snapshot. When a snapshot is created, there is no longer a need to analyze the changes that occurred before it in order to reconstruct the current state of the object. This optimization allows for faster retrieval by skipping the analysis of preceding changes when a snapshot is available.
 
 `any-sync` is a protocol that is independent of specific client implementations, making it client-agnostic. It offers a mechanism to traverse objects, allowing applications to build their own application state based on the objects received through the protocol. In other words, applications using `any-sync` can utilize the objects received from it to construct their own internal state, tailored to their specific requirements and functionalities.
 
-_**Files**_
+#### Files
 
 `any-sync`'s file processing is a two-part solution: data storage and data retrieval.
 
@@ -57,7 +57,7 @@ It uses [IPLD](https://ipld.io/) data structures to store files' data. Files are
 
 `any-sync` has its own approach for file retrieval, as opposed to [bitswap](https://docs.ipfs.tech/concepts/bitswap/), which is designed for networks with complex topologies.
 
-_**Spaces**_
+#### Spaces
 
 ![Space](../assets/space.png)
 
@@ -67,7 +67,7 @@ In the simplest scenario, each space holds the data of a single user, and this s
 
 Spaces are stored locally on user’s devices or on sync nodes on the external network.
 
-_**Encryption**_
+#### Encryption
 
 Each user has private and public keys which are used for signing, encrypting, and decrypting.
 
@@ -75,7 +75,7 @@ Each user has private and public keys which are used for signing, encrypting, an
 
 Every time a user modifies the data, the changes are both encrypted and signed using their own private key. When these changes are synchronized with other devices or sync-nodes, they are verified using a shared public key. However, only the user who possesses the private key can access the content of these changes.
 
-#### Infrastructure
+### Infrastructure
 
 ![Infrastructure](../assets/infrastructure.png)
 
@@ -83,14 +83,15 @@ While `any-sync` works locally on user’s devices and in local p2p networks, an
 
 `any-sync` protocol works the same way on the user’s devices and on the infrastructure side. So every node could be seen as a peer.
 
-_**Nodes**_\
+#### Nodes
+
 The infrastructure side consists of three types of nodes: sync nodes, file nodes, and a coordinator node.
 
 * _Sync nodes_ store and process spaces. Each space is served by several sync nodes in order to increase the reliability of infrastructure.
 * _File nodes_ store and process files based on IPLD data structure.
 * _Coordinator node_ is responsible for storing and updating the infrastructure configuration: it manages the list of nodes, provides clients with addresses of nodes for spaces, provides nodes with addresses of replicas, etc.
 
-_**Load distribution**_
+#### Load distribution
 
 [Load distribution](https://github.com/anyproto/go-chash) is implemented with a combination of modular hashing and consistent hashing. The algorithm distributes partitions (groups of spaces) between nodes using consistent hashing, then uses modular hashing to determine the partition for space (and thus the node for space).
 
@@ -98,11 +99,11 @@ The algorithm limits the load on a node, which makes distribution more or less e
 
 Adding a new node leads to a change in infrastructure configuration. This event starts the resharding process, when spaces and data within them are transferred between nodes according to the new configuration.
 
-#### Peer retrieval
+### Peer retrieval
 
 ![Hybrid peer retrieval](../assets/peer_retrieval.png)
 
-_**Local p2p**_
+#### Local p2p
 
 To find peers in the local network and communicate with them without connecting to external infrastructure, any-sync relies on [mDNS protocol](https://en.wikipedia.org/wiki/Multicast\_DNS).
 
@@ -116,7 +117,7 @@ Files stored on a peer device can be retrieved directly from them as well.
 
 This allows for efficient and direct communication between devices on the same network without the need for a remote server or internet connection.
 
-_**Global networks**_
+#### Global networks
 
 `any-sync` on the user's device stores a configuration with the address of external infrastructure. It requests a coordinator node for the address of the sync node, which is assigned to serve the user's space.
 
@@ -130,7 +131,7 @@ In this case, the first device acts as a bridge. It exchanges data with the loca
 
 It also works the other way: when the first device receives updates from the remote sync-node, it sends them to the second device via local p2p connection.
 
-### Development background
+## Development background
 
 The importance of developing and maintaining a completely new protocol was clear to us, and we made the decision after carefully considering existing solutions.
 
@@ -144,7 +145,7 @@ We also considered using IPFS, but its approach to content identifiers didn't me
 
 Creating stable identifiers and implementing logic to merge different document states on top of IPFS would be too complex, so we chose a straightforward approach.
 
-### Next steps
+## Next steps
 
 We are excited to announce the early development stage release of `any-sync` to the community.
 
