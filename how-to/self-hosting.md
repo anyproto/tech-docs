@@ -75,6 +75,21 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
     - [`anytype-kotlin`](https://github.com/anyproto/anytype-kotlin)
     - [`anytype-swift`](https://github.com/anyproto/anytype-swift)
 
+## Adding consensus node
+
+> This information is important for those who started self-hosting without consensus node. If you are starting from scratch, please refer to the [Steps](#steps) section.
+
+A new type of node has appeared in the `any-sync` network: `any-sync-consensusnode`. It is essential for the proper functioning of the network. If you are updating your network, please ensure that you add this node to your configuration. Please make sure of the following:
+
+1. You have a running MongoDB replica set. It is possible to run a single MongoDB instance in replica set mode.
+2. You have created a configuration for `any-sync-consensusnode` and added it to your network configuration. You can use the `any-sync-network` tool to generate it.
+3. You have updated your network configuration to include `any-sync-consensusnode`. You can update the configuration files on each node, or you can use `any-sync-confapply` from `any-sync-coordinator/bin`:
+
+    ```
+    any-sync-confapply -n network.yml
+    ```
+
+
 ## Conditions
 
 `any-sync` networks are permissionless. This means that anyone who knows the IP and port of the coordinator node can connect to it, create new spaces, or download existing encrypted objects. Data inside spaces is always secure, as it requires space encryption keys to read it. Nodes do not store and do not have access to these encryption keys and cannot decrypt the data. Refer to the [Any-Sync Protocol overview](../any-sync/overview.md "mention") for additional details.
