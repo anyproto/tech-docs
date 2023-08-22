@@ -16,9 +16,7 @@ The following documentation outlines the process of initiating and handling the 
     - These nodes listen to the deletion log using a poll mechanism.
 
 - **Deletion log: initial *RemovePrepare* message:**
-    - When a responsible node receives the *RemovePrepare* message:
-        - The node takes action to prevent the space from being accessed or synced.
-        - This marks the beginning of the space removal process.
+    - When a responsible node receives the *RemovePrepare* message, the node takes action to prevent the space from being accessed or synced.
 
 - **Deletion log: *Ok* message - user revocation within 30 days:**
     - During the 30-day removal period, the user has the option to revoke the deletion command.
