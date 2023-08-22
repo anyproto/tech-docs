@@ -6,6 +6,7 @@
 - 🌐 Any-Sync
   - [Protocol overview](any-sync/overview.md)
   - [Configuration](any-sync/configuration.md)
+  - [Space deletion](any-sync/space-deletion.md)
 
 - 🫀 Anytype-Heart
   - [Configuration](anytype-heart/configuration.md)
