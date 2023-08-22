@@ -13,7 +13,7 @@ The following documentation outlines the process of initiating and handling the 
 
 - **Deletion log and responsible nodes:**
     - The responsible nodes for the space receive messages from the deletion log.
-    - These nodes listen to the deletion log using a poll mechanism.
+    - These nodes sync the deletion log.
 
 - **Deletion log: initial *RemovePrepare* message:**
     - When a responsible node receives the *RemovePrepare* message, the node takes action to prevent the space from being accessed or synced.
