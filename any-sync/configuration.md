@@ -21,6 +21,12 @@ yamux:
   writeTimeoutSec: # required
   dialTimeoutSec:  # required
 
+# required; udp/quic network configuration
+quic:
+  listenAddrs:     # required; an array of address which node should listen
+  writeTimeoutSec: # required
+  dialTimeoutSec:  # required
+
 # required; describes any-sync network topology
 network:
   id:              # required; configuration ID
