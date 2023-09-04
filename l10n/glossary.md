@@ -20,6 +20,8 @@ Block Type — defines the behavior of the Block.
 
 Canvas — the place or area where Blocks live together to form the content of an Object.
 
+Object Editor — the same as the Canvas.
+
 Relation — a property of the Object.
 
 Link — a clickable text that leads to the linked Object or website in case the text links to a URL. Also known as a hyperlink. Indicated by a small icon if the link takes you outside Anytype.
