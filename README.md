@@ -11,6 +11,7 @@ Our main repos:
 | [any-sync](https://github.com/anyproto/any-sync) | Protocol designed to create high-performance, local-first, peer-to-peer, end-to-end encrypted applications that facilitate seamless collaboration among multiple users and devices |
 | [any-sync-node](https://github.com/anyproto/any-sync-node) | Implementation of node from any-sync protocol |
 | [any-sync-filenode](https://github.com/anyproto/any-sync-filenode) | Implementation of file node from any-sync protocol |
+| [any-sync-consensusnode](https://github.com/anyproto/any-sync-consensusnode) | Implementation of consensus node from any-sync protocol |
 | [any-sync-coordinator](https://github.com/anyproto/any-sync-coordinator) | Implementation of coordinator node from any-sync protocol |
 | [any-block](https://github.com/anyproto/any-block) | Protocol describing data structures used in Anytype software |
 | [anytype-heart](https://github.com/anyproto/anytype-heart) | Middleware library for Anytype |

@@ -21,6 +21,12 @@ yamux:
   writeTimeoutSec: # required
   dialTimeoutSec:  # required
 
+# required; udp/quic network configuration
+quic:
+  listenAddrs:     # required; an array of address which node should listen
+  writeTimeoutSec: # required
+  dialTimeoutSec:  # required
+
 # required; describes any-sync network topology
 network:
   id:              # required; configuration ID
@@ -29,7 +35,7 @@ network:
     - peerId:        # required; node's account peer ID
       addresses:     # required; an array of node's addresses
       types:         # required; an array of node's types,
-                     # allowed values: tree (for sync nodes), file, coordinator
+                     # allowed values: tree (for sync nodes), file, consensus, coordinator
   creationTime:    # required; configuration's creation time
 
 # required; a path where current configuration is stored
@@ -123,4 +129,19 @@ networkUpdateIntervalSec:
 # File Node can be built in dev mode (`make build-dev`), bypasses S3, not reliable
 fileDevStore:
   path:       # optional; Local path for files storage
+```
+## Consensus Node configuration options
+
+These options are specific for Any-Sync Consensus nodes.
+
+```yaml
+# required; MongoDB configuration
+mongo:
+  connect:       # required; MongoDB connection URL
+  database:      # required; MongoDB database name
+  logCollection: # required; MongoDB collection name for logs
+
+# required; Network configuration update interval
+# Descibes how often the node requests network configuration from the coordinator node
+networkUpdateIntervalSec: 
 ```
