@@ -91,8 +91,8 @@ The infrastructure side consists of four types of nodes: sync, file, consensus a
 
 * _Sync nodes_ store and process spaces. Each space is served by several sync nodes in order to increase the reliability of infrastructure.
 * _File nodes_ store and process files based on IPLD data structure.
-* _Consesnsus nodes_ monitor ACL changes and validites them.
-* _Coordinator nodes_ is store and update the infrastructure configuration: they manage the list of nodes, provide clients with addresses of nodes for spaces, provide nodes with addresses of replicas, etc.
+* _Consensus nodes_ monitor ACL changes and validate them.
+* _Coordinator nodes_ store and update the infrastructure configuration: they manage the list of nodes, provide clients with addresses of nodes for spaces, provide nodes with addresses of replicas, etc.
 
 #### Load distribution
 

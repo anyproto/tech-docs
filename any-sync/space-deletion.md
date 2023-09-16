@@ -29,15 +29,15 @@ During the deletion period (30 days by default), the user has the option to revo
 If the user chooses to revoke, the space will continue syncing as before.
 
 ### `Remove` Message
-After the deletion period (30 days by default) expires, responsible nodes receive `Remove` message in the deletion log:
+After the deletion period (30 days by default) expires, responsible nodes receive the `Remove` message in the deletion log:
 - Storage for the space is cleared, preventing further access.
 - The deletion log is removed from the consensus nodes.
 
 ## Notification of Missing Space
-Following the completion of the deletion process, when we try to get the space we will get a "space is missing" error.
+Following the completion of the deletion process, when we try to get the space, we will get a "space is missing" error.
 
 ## Attempts to Re-add the Space
-If an attempt is made to push the same space to the coordinator an error message is generated, indicating that the space was previously deleted.
+If an attempt is made to push the same space to the coordinator, an error message is generated, indicating that the space was previously deleted.
 
 ## Future Considerations
 In the future, a force re-add mechanism can be implemented to reintroduce a previously deleted space.
