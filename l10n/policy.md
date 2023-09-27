@@ -20,4 +20,6 @@ In some cases, removing a pronoun will also help. For example, "I got it!" can b
 Currently, the Anytype app doesn't support localization for date references. Now, dates should always be formatted in the en-US locale (YYYY-MM-DD, @three days ago, @last month).
 
 ## Pluralization
-A lot of languages have more than two plural forms for nouns. Currently, the Anytype app doesn't support complex pluralization. Please find a way to better address this problem in your language, as proper pluralization is not supported yet.
+A lot of languages have more than two plural forms for nouns. Currently, the Anytype Desktop app doesn't support complex pluralization. Please find a way to better address this problem in your language, as proper pluralization is not supported yet.
+
+The Anytype iOS app supports complex pluralization, and a suitable interface to contribute the required word forms should be displayed to translators in Crowdin.
