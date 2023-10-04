@@ -12,7 +12,7 @@ This article will help you to self-host Any-Sync on your own infrastructure for 
 >
 > You can also find our own [docker-compose](https://github.com/anyproto/any-sync-docker-compose). While we do not recommend using it as-is in production, it can be helpful for your local testing.
 >
-> There are also [ansible](https://github.com/anyproto/ansible-anysync) and [puppet](https://github.com/anyproto/puppet-anysync) repositoriies on GitHub that can be used in production.
+> There are also [ansible](https://github.com/anyproto/ansible-anysync) repository and [puppet module](https://forge.puppetlabs.com/modules/anyproto/anysync/readme) that can be used in production.
 
 To ensure compatibility, please use Go version `1.19` for building `any-sync-*` and `anytype-heart`.
 
