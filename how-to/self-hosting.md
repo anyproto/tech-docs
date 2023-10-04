@@ -9,6 +9,10 @@ This article will help you to self-host Any-Sync on your own infrastructure for 
 ## Prerequisites
 
 > There is a [Docker image](https://github.com/clems4ever/anytype-backup-node) made by [@clems4ever](https://github.com/clems4ever), which allows you to launch any-sync and its requirements in a single step. Please note, that you will still have to build your clients to use this self-hosted network. The project is maintained by an external contributor, not by Any team.
+>
+> You can also find our own [docker-compose](https://github.com/anyproto/any-sync-docker-compose). While we do not recommend using it as-is in production, it can be helpful for your local testing.
+>
+> There are also [ansible](https://github.com/anyproto/ansible-anysync) and [puppet](https://github.com/anyproto/puppet-anysync) repositoriies on GitHub that can be used in production.
 
 To ensure compatibility, please use Go version `1.19` for building `any-sync-*` and `anytype-heart`.
 
