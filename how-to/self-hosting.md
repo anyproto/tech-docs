@@ -4,15 +4,15 @@ We believe that any software should support fundamental digital freedoms. With t
 
 This is our way. By opening our source code, we ensure that our users have complete autonomy and independence from the Any Association. They retain the ability to analyze, compile, and run each software component on their personal machines without relying on external parties. This guarantees uninterrupted access to the tools and data they generate and store, shielding them from any potential restrictions.
 
-This article will help you to self-host Any-Sync on your own infrastructure for personal use and configure Anytype clients to work with your nodes.
+This article will help you to self-host Any-Sync on your own infrastructure for personal use.
 
 ## Prerequisites
 
-> There is a [Docker image](https://github.com/clems4ever/anytype-backup-node) made by [@clems4ever](https://github.com/clems4ever), which allows you to launch any-sync and its requirements in a single step. Please note, that you will still have to build your clients to use this self-hosted network. The project is maintained by an external contributor, not by Any team.
+> There are [ansible repository](https://github.com/anyproto/ansible-anysync) and [puppet module](https://forge.puppetlabs.com/modules/anyproto/anysync/readme) that can be used in production.
 >
-> You can also find our own [docker-compose](https://github.com/anyproto/any-sync-dockercompose). While we do not recommend using it as-is in production, it can be helpful for your local testing.
->
-> There are also [ansible repository](https://github.com/anyproto/ansible-anysync) and [puppet module](https://forge.puppetlabs.com/modules/anyproto/anysync/readme) that can be used in production.
+> You can also find our [docker-compose](https://github.com/anyproto/any-sync-dockercompose). While we do not recommend using it as-is in production, it can be helpful for your local testing.
+> 
+> There is also a [Docker image](https://github.com/clems4ever/anytype-backup-node) made by [@clems4ever](https://github.com/clems4ever), which allows you to launch any-sync and its requirements in a single step. The project is maintained by an external contributor, not by Any team.
 
 To ensure compatibility, please use Go version `1.21` for building `any-sync-*` and `anytype-heart`.
 
@@ -57,27 +57,7 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
    
       (🚨 create a `db` folder in the current working directory of `any-sync-node`, as it is required by the generated configuration)
    * `file_N.yml` for each of `any-sync-filenode`s.
-6. Download [`anytype-heart`](https://github.com/anyproto/anytype-heart) middleware library. Build it for the clients you need, using your network configuration. If you generated it with `any-sync-network` tool, use `heart.yml`:
-
-    ```bash
-    # Build and install for desktop client
-    make install-dev-js ANY_SYNC_NETWORK=heart.yml
-    ```
-
-    ```bash
-    # Build for iOS client
-    make build-ios ANY_SYNC_NETWORK=heart.yml
-    ```
-
-    ```bash
-    # Build for Android client
-    make build-android ANY_SYNC_NETWORK=heart.yml
-    ```
-    See `anytype-heart` [`README.md`](https://github.com/anyproto/anytype-heart#build-from-source) for details.
-8. The last step! Build clients you need from the source. Refer to `README.md` in clients repositories for more details:
-    - [`anytype-ts`](https://github.com/anyproto/anytype-ts)
-    - [`anytype-kotlin`](https://github.com/anyproto/anytype-kotlin)
-    - [`anytype-swift`](https://github.com/anyproto/anytype-swift)
+6. Now you can configure your client apps to use your network configuration. If you generated it with `any-sync-network` tool, use `heart.yml`.
 
 ## Adding consensus node
 
