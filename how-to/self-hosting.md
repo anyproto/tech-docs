@@ -12,7 +12,7 @@ This article will help you to self-host Any-Sync on your own infrastructure for 
 >
 > You can also find our [docker-compose](https://github.com/anyproto/any-sync-dockercompose). While we do not recommend using it as-is in production, it can be helpful for your local testing.
 
-To ensure compatibility, please use Go version `1.21` for building `any-sync-*` and `anytype-heart`.
+To ensure compatibility, please use Go version `1.22` for building `any-sync-*` and `anytype-heart`.
 
 You will need a MongoDB to run Any-Sync Coordinator and Consensus Nodes, and an S3-compatible object storage and Redis to run Any-Sync File Node.
 
