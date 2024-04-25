@@ -8,9 +8,11 @@ This article will help you to self-host Any-Sync on your own infrastructure for 
 
 ## Prerequisites
 
-> There are [ansible repository](https://github.com/anyproto/ansible-anysync) and [puppet module](https://forge.puppetlabs.com/modules/anyproto/anysync/readme) that can be used in production.
+> There is a [docker-compose](https://github.com/anyproto/any-sync-dockercompose). This image is suitable for running your personal self-hosted any-sync network for home usage. If you plan to self-host a heavily used any-sync network, please consider other options.
 >
-> You can also find our [docker-compose](https://github.com/anyproto/any-sync-dockercompose). While we do not recommend using it as-is in production, it can be helpful for your local testing.
+> Also, there are [ansible repository](https://github.com/anyproto/ansible-anysync) and [puppet module](https://forge.puppetlabs.com/modules/anyproto/anysync/readme).
+>
+> If you want to proceed with a manual setup, follow the steps below.
 
 To ensure compatibility, please use Go version `1.22` for building `any-sync-*` and `anytype-heart`.
 
