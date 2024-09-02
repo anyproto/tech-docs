@@ -36,7 +36,7 @@ network:
       addresses:     # required; an array of node's addresses
       types:         # required; an array of node's types,
                      # allowed values: tree (for sync nodes), file, consensus, coordinator
-  creationTime:    # required; configuration's creation time
+  creationTime:    # optional; configuration's creation time
 
 # required; a path where current configuration is stored
 networkStorePath: 
