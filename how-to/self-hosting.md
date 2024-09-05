@@ -18,9 +18,14 @@ To ensure compatibility, please use Go version `1.22` for building `any-sync-*` 
 
 You will need a MongoDB to run Any-Sync Coordinator and Consensus Nodes, and an S3-compatible object storage and Redis to run Any-Sync File Node.
 
-Please note that MongoDB should run in replica set mode, even if you are running only one instance. You can find more information about MongoDB replica sets [here](https://docs.mongodb.com/manual/replication/).
+Some of the possible S3-compatible solutions are:
+- [MinIO](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-single-drive.html)
+- [Seaweedfs](https://seaweedfs.github.io/)
 
-One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-single-drive.html).
+> Please note that MongoDB should run in replica set mode, even if you are running only one instance. You can find more information about MongoDB replica sets [here](https://docs.mongodb.com/manual/replication/).
+>
+> Also, make sure that your Redis instance has [Bloom Filter](https://redis.io/docs/latest/develop/data-types/probabilistic/bloom-filter/) module included. As an option, you can use [redis-stack](https://github.com/redis-stack/redis-stack) distribution which has this and other modules built in.
+
 
 ## Steps
 
@@ -48,13 +53,13 @@ One of the possible S3-compatible solutions is [MinIO](https://min.io/docs/minio
     ```
 
 4. Download and build [`any-sync-coordinator`](https://github.com/anyproto/any-sync-coordinator), [`any-sync-node`](https://github.com/anyproto/any-sync-node), [`any-sync-filenode`](https://github.com/anyproto/any-sync-filenode), and [`any-sync-consensusnode`](https://github.com/anyproto/any-sync-consensusnode); see `README.md` inside each repo for details.
-5. Run nodes using proper configuration files. 
+5. Run nodes using proper configuration files.
 
     If you generated them with `any-sync-network` tool, use:
    * `coordinator.yml` for `any-sync-coordinator` node,
    * `consensus.yml` for `any-sync-consensusnode`,
-   * `sync_N.yml` for each of `any-sync-node`s, 
-   
+   * `sync_N.yml` for each of `any-sync-node`s,
+
       (🚨 create a `db` folder in the current working directory of `any-sync-node`, as it is required by the generated configuration)
    * `file_N.yml` for each of `any-sync-filenode`s.
 6. Now you can configure your client apps to use your network configuration. If you generated it with `any-sync-network` tool, use `heart.yml`.
