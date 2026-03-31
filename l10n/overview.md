@@ -1,4 +1,4 @@
-# Projet overview
+# Project overview
 
 We have started accepting translations for Anytype Apps. 
 
